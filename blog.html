@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mental Wellness Blog | Asana Care & Mental Wellness — Texas Telepsychiatry</title>
+<meta name="description" content="Answers to common questions about telepsychiatry, medication management, ADHD, anxiety, depression and teen mental health in Texas. From Asana Aruna, PMHNP-BC.">
+<link rel="canonical" href="https://asanacarementalwellness.com/blog.html">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Asana Care & Mental Wellness">
+<style>
+  :root{--violet:#4a2a7a;--violet-2:#5f3a95;--violet-deep:#3a2060;--violet-soft:#efe9f7;--green:#6cb33f;--green-2:#4f9d34;--green-soft:#eef7e6;--mist:#f6f3fb;--white:#fff;--ink:#2b2440;--ink-2:#514a68;--muted:#8f88a3;--line:#e7e1f0;--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--shadow:0 18px 50px rgba(74,42,122,.10)}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  h1,h2,h3,.serif{font-family:var(--serif)}
+  .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:var(--green-2)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14.5px;border-radius:40px;padding:12px 22px;cursor:pointer;border:none;font-family:var(--sans);transition:transform .15s}
+  .btn-primary{background:linear-gradient(135deg,var(--violet-2),var(--violet));color:#fff;box-shadow:0 10px 24px rgba(74,42,122,.26)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{background:#fff;color:var(--violet);border:1.5px solid var(--line)}
+  header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand-name{font-family:var(--serif);font-size:19px;color:var(--violet);font-weight:700;line-height:1}
+  .brand-name small{display:block;font-size:9px;letter-spacing:.26em;color:var(--green-2);font-weight:700;font-family:var(--sans);margin-top:3px}
+  .navlinks{display:flex;gap:24px;align-items:center}.navlinks a{font-size:14.5px;font-weight:600;color:var(--ink-2)}.navlinks a:hover{color:var(--violet)}
+  @media(max-width:760px){.navlinks a:not(.btn){display:none}}
+  .logo{width:42px;height:42px}
+  .hero{background:radial-gradient(ellipse 70% 90% at 80% -10%,var(--violet-soft),transparent 60%),linear-gradient(180deg,#fbfaff,var(--mist));padding:52px 0}
+  .hero h1{font-size:clamp(30px,4.4vw,44px);color:var(--violet);font-weight:700;line-height:1.1;max-width:16ch;letter-spacing:-.01em}
+  .hero p{color:var(--ink-2);font-size:18px;margin-top:14px;max-width:52ch}
+  section{padding:52px 0}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .post-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 6px 22px rgba(74,42,122,.05);transition:transform .18s,box-shadow .18s;display:flex;flex-direction:column}
+  .post-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .cat{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--green-2);background:var(--green-soft);padding:5px 12px;border-radius:20px;margin-bottom:14px}
+  .post-card h3{font-family:var(--serif);font-size:22px;color:var(--violet);line-height:1.2}
+  .post-card p{color:var(--ink-2);font-size:14.5px;margin-top:10px;flex:1}
+  .post-card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:18px}
+  .readlink{color:var(--green-2);font-weight:700;font-size:14px}
+  .cbadge{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
+  /* single post */
+  #postView{display:none}
+  .back{display:inline-flex;align-items:center;gap:7px;color:var(--violet-2);font-weight:700;font-size:14px;margin-bottom:20px}
+  .article{max-width:760px;margin:0 auto}
+  .article h1{font-family:var(--serif);font-size:clamp(28px,4vw,40px);color:var(--violet);line-height:1.15;margin:10px 0 16px}
+  .article .body{font-size:18px;color:var(--ink-2);line-height:1.75}
+  .sharebar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:26px 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sharebar span{font-size:13px;font-weight:700;color:var(--muted);margin-right:4px}
+  .sbtn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--violet-soft);color:var(--violet);cursor:pointer;border:none;font-weight:700;transition:transform .15s}
+  .sbtn:hover{transform:translateY(-2px);background:var(--violet);color:#fff}
+  /* comments */
+  .comments{max-width:760px;margin:36px auto 0}
+  .comments h2{font-family:var(--serif);font-size:26px;color:var(--violet);margin-bottom:6px}
+  .live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--green-soft);margin-left:8px;vertical-align:middle}
+  .cform{background:var(--mist);border:1px solid var(--line);border-radius:16px;padding:20px;margin:18px 0 26px}
+  .cform .row{display:grid;grid-template-columns:1fr;gap:12px}
+  .cform input,.cform textarea{width:100%;font-family:var(--sans);font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:12px 14px}
+  .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--violet-2);box-shadow:0 0 0 4px var(--violet-soft)}
+  .cform textarea{resize:vertical;min-height:80px}
+  .clist{display:flex;flex-direction:column;gap:14px}
+  .comment{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .comment .ch{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .avatar{width:34px;height:34px;border-radius:50%;background:var(--violet-soft);color:var(--violet);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+  .comment .nm{font-weight:700;color:var(--violet);font-size:14.5px}
+  .comment .dt{font-size:12px;color:var(--muted)}
+  .comment .tx{font-size:14.5px;color:var(--ink-2)}
+  .empty{color:var(--muted);font-size:14.5px;padding:16px 0}
+  .modebar{background:var(--violet-soft);color:var(--violet);font-size:12.5px;text-align:center;padding:8px;font-weight:600}
+  footer{background:var(--violet);color:rgba(255,255,255,.75);text-align:center;padding:30px 24px;font-size:13.5px;margin-top:40px}
+  footer a{color:#fff;font-weight:600}
+  .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--violet);color:#fff;padding:13px 22px;border-radius:30px;font-weight:600;font-size:14px;box-shadow:0 12px 30px rgba(74,42,122,.4);transition:transform .3s;z-index:100}
+  .toast.on{transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+<div class="modebar" id="modebar"></div>
+<header><div class="wrap"><nav>
+  <a href="index.html" class="brand">
+    <svg class="logo" viewBox="0 0 60 60"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5f3a95"/><stop offset="1" stop-color="#4a2a7a"/></linearGradient></defs><path d="M30 4C18 12 10 22 10 34a20 20 0 0 0 40 0c0-12-8-22-20-30z" fill="#eef7e6"/><path d="M30 10c-8 6-14 14-14 24a14 14 0 0 0 28 0c0-10-6-18-14-24z" fill="url(#lg)"/><circle cx="30" cy="30" r="5" fill="#6cb33f"/></svg>
+    <span class="brand-name">Asana Care<small>&amp; Mental Wellness</small></span>
+  </a>
+  <div class="navlinks">
+    <a href="index.html#about">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#book" class="btn btn-primary">Book Appointment</a>
+  </div>
+</nav></div></header>
+
+<!-- LISTING -->
+<div id="listView">
+  <div class="hero"><div class="wrap">
+    <span class="eyebrow">Mental Wellness Blog</span>
+    <h1>Questions worth asking about your mental health.</h1>
+    <p>Honest answers on telepsychiatry, medication, ADHD, anxiety, teens and more — for patients across Texas &amp; California. Have a thought? Every post is open for discussion.</p>
+  </div></div>
+  <section><div class="wrap">
+    <div class="grid" id="postGrid"></div>
+  </div></section>
+</div>
+
+<!-- SINGLE POST -->
+<div id="postView"><section><div class="wrap">
+  <div class="article">
+    <a class="back" href="blog.html">← All questions</a>
+    <span class="cat" id="pCat"></span>
+    <h1 id="pTitle"></h1>
+    <div class="body" id="pBody"></div>
+    <div class="sharebar" id="pShare"></div>
+  </div>
+  <div class="comments">
+    <h2>Join the conversation<span class="live-dot" title="Live comments"></span></h2>
+    <p style="color:var(--muted);font-size:14px">Comments are moderated for a supportive space. Please don’t share private health details. In a crisis, call or text 988.</p>
+    <form class="cform" id="cForm">
+      <div class="row">
+        <input id="cName" placeholder="Your name (or initials)" maxlength="60" required>
+        <textarea id="cBody" placeholder="Share a thought or question…" maxlength="1000" required></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit" style="margin-top:12px">Post Comment</button>
+    </form>
+    <div class="clist" id="cList"></div>
+  </div>
+</div></section></div>
+
+<footer>© 2026 Asana Care &amp; Mental Wellness · <a href="index.html">Home</a> · <a href="index.html#book">Book an Appointment</a> · Telepsychiatry for Texas &amp; California</footer>
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script>
+  var $ = function(id){return document.getElementById(id);};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];});}
+  function initials(n){return (n||'?').trim().split(/\s+/).map(function(w){return w[0];}).slice(0,2).join('').toUpperCase();}
+  function when(iso){try{var d=new Date(iso);return d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});}catch(e){return '';}}
+  function toast(m){var t=$('toast');t.textContent=m;t.classList.add('on');setTimeout(function(){t.classList.remove('on');},2600);}
+  $('modebar').innerHTML = ASANA.live ? '🟢 Live — comments are shared with all readers and the office' : '🟡 Demo mode — comments save in this browser. Add Supabase keys in data.js to go live for everyone.';
+  if(ASANA.live) $('modebar').style.cssText='background:#eef7e6;color:#4f9d34';
+
+  var POSTS = [];
+  function renderList(){
+    ASANA.getPosts({publishedOnly:true}).then(function(posts){
+      POSTS = posts;
+      $('postGrid').innerHTML = posts.map(function(p){
+        return '<a class="post-card" href="#'+esc(p.slug)+'">'+
+          '<span class="cat">'+esc(p.category||'Mental Wellness')+'</span>'+
+          '<h3>'+esc(p.question)+'</h3>'+
+          '<p>'+esc(p.excerpt||'')+'</p>'+
+          '<div class="foot"><span class="readlink">Read &amp; discuss →</span><span class="cbadge" data-cc="'+esc(p.slug)+'">💬 …</span></div>'+
+        '</a>';
+      }).join('');
+      posts.forEach(function(p){ ASANA.getComments(p.slug,{approvedOnly:true}).then(function(cs){var el=document.querySelector('[data-cc="'+p.slug+'"]');if(el)el.textContent='💬 '+cs.length;}); });
+    });
+  }
+
+  function shareBtns(p){
+    var url = location.origin + location.pathname + '#' + p.slug;
+    var text = p.question;
+    return '<span>Share:</span>'+
+      '<button class="sbtn" title="Copy link" onclick="copyLink(\''+esc(url)+'\')">🔗</button>'+
+      '<a class="sbtn" title="Share on X" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(text)+'&url='+encodeURIComponent(url)+'">𝕏</a>'+
+      '<a class="sbtn" title="Share on Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url)+'">f</a>'+
+      '<a class="sbtn" title="Email this" href="mailto:?subject='+encodeURIComponent(text)+'&body='+encodeURIComponent(url)+'">✉</a>';
+  }
+  window.copyLink = function(u){ (navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){toast('Link copied ✓');},function(){toast(u);}); };
+
+  var currentSlug = null;
+  function renderComments(slug){
+    ASANA.getComments(slug,{approvedOnly:true}).then(function(cs){
+      $('cList').innerHTML = cs.length ? cs.map(function(c){
+        return '<div class="comment"><div class="ch"><div class="avatar">'+esc(initials(c.name))+'</div><div><div class="nm">'+esc(c.name)+'</div><div class="dt">'+when(c.created_at)+'</div></div></div><div class="tx">'+esc(c.body)+'</div></div>';
+      }).join('') : '<div class="empty">Be the first to share a thought.</div>';
+    });
+  }
+
+  function openPost(slug){
+    var p = null; for(var i=0;i<POSTS.length;i++){if(POSTS[i].slug===slug)p=POSTS[i];}
+    var render = function(post){
+      if(!post){location.hash='';return;}
+      currentSlug = post.slug;
+      $('pCat').textContent = post.category||'Mental Wellness';
+      $('pTitle').textContent = post.question;
+      $('pBody').innerHTML = '<p>'+esc(post.body).replace(/\n/g,'</p><p>')+'</p>';
+      $('pShare').innerHTML = shareBtns(post);
+      document.title = post.question + ' | Asana Care & Mental Wellness';
+      $('listView').style.display='none'; $('postView').style.display='block';
+      window.scrollTo(0,0);
+      renderComments(post.slug);
+    };
+    if(p) render(p); else ASANA.getPost(slug).then(render);
+  }
+
+  function route(){
+    var slug = location.hash.replace(/^#/,'');
+    if(slug){ if(!POSTS.length){ ASANA.getPosts({publishedOnly:true}).then(function(ps){POSTS=ps;openPost(slug);}); } else openPost(slug); }
+    else { $('postView').style.display='none'; $('listView').style.display='block'; document.title='Mental Wellness Blog | Asana Care & Mental Wellness'; renderList(); }
+  }
+  window.addEventListener('hashchange', route);
+
+  $('cForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = $('cName').value.trim(), body = $('cBody').value.trim();
+    if(!name||!body||!currentSlug) return;
+    ASANA.addComment({post_slug:currentSlug, name:name, body:body}).then(function(){
+      $('cName').value=''; $('cBody').value=''; toast('Comment posted ✓'); renderComments(currentSlug);
+    });
+  });
+
+  route();
+</script>
+</body>
+</html>

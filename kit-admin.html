@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Kit Manager | Asana Care & Mental Wellness</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{--violet:#4a2a7a;--violet-2:#5f3a95;--violet-soft:#efe9f7;--green:#6cb33f;--green-2:#4f9d34;--green-soft:#eef7e6;--mist:#f6f3fb;--white:#fff;--ink:#2b2440;--ink-2:#514a68;--muted:#8f88a3;--line:#e7e1f0;--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--mist);color:var(--ink);line-height:1.5}
+  a{color:inherit}
+  .top{background:var(--violet);color:#fff}
+  .top .wrap{max-width:1120px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .top .brand{font-family:var(--serif);font-size:19px;font-weight:700}.top .brand small{font-family:var(--sans);font-size:10px;letter-spacing:.2em;color:#cdbce8;display:block}
+  .top a.link{color:#e5d9f5;font-size:13.5px;font-weight:600;margin-left:16px}.top a.link:hover{color:#fff}
+  .modebar{font-size:12.5px;text-align:center;padding:7px;font-weight:600;background:#fbf0e2;color:#b5651d}
+  main{max-width:1120px;margin:22px auto 60px;padding:0 22px}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+  .bar h1{font-family:var(--serif);font-size:24px;color:var(--violet)}
+  .bar .sub{font-size:13px;color:var(--muted)}
+  .btn{border:none;border-radius:28px;font-weight:700;font-size:13px;padding:10px 18px;cursor:pointer;font-family:var(--sans)}
+  .btn-v{background:var(--violet);color:#fff}.btn-g{background:var(--green-2);color:#fff}.btn-ghost{background:#fff;border:1.5px solid var(--line);color:var(--ink-2)}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;position:relative}
+  .card .type{position:absolute;top:16px;right:16px;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:12px}
+  .type.flyer{background:var(--violet-soft);color:var(--violet)}.type.video{background:var(--green-soft);color:var(--green-2)}
+  .card h3{font-family:var(--serif);font-size:16px;color:var(--violet);margin-bottom:12px}
+  .fld{margin-bottom:10px}
+  .fld label{display:block;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+  .fld input,.fld textarea,.fld select{width:100%;font-family:var(--sans);font-size:13.5px;color:var(--ink);background:var(--mist);border:1.5px solid var(--line);border-radius:9px;padding:9px 11px}
+  .fld input:focus,.fld textarea:focus,.fld select:focus{outline:none;border-color:var(--violet-2);background:#fff;box-shadow:0 0 0 3px var(--violet-soft)}
+  .fld textarea{resize:vertical;min-height:56px}
+  .card .acts{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
+  .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--violet);color:#fff;padding:12px 22px;border-radius:30px;font-weight:600;font-size:14px;box-shadow:0 12px 30px rgba(74,42,122,.4);transition:transform .3s;z-index:150}
+  .toast.on{transform:translateX(-50%) translateY(0)}
+  .gate{position:fixed;inset:0;background:linear-gradient(160deg,#4a2a7a,#3a2060);display:flex;align-items:center;justify-content:center;z-index:200}
+  .gate .box{background:#fff;border-radius:20px;padding:34px;width:340px;text-align:center;box-shadow:0 30px 70px rgba(0,0,0,.3)}
+  .gate h1{font-family:var(--serif);color:var(--violet);font-size:22px;margin-bottom:6px}.gate p{font-size:13px;color:var(--muted);margin-bottom:16px}
+  .gate input{width:100%;text-align:center;font-size:16px;padding:12px;margin-bottom:12px;border:1.5px solid var(--line);border-radius:9px}
+</style>
+</head>
+<body>
+<div class="gate" id="gate"><div class="box"><h1>Kit Manager</h1><p>Asana Care &amp; Mental Wellness</p><input type="password" id="pass" placeholder="Enter passcode" onkeydown="if(event.key==='Enter')unlock()"><button class="btn btn-v" style="width:100%" onclick="unlock()">Enter</button><p style="margin-top:14px;font-size:11px">Demo passcode: <b>asana2026</b></p></div></div>
+
+<div class="top"><div class="wrap">
+  <div class="brand">Asana Care — Kit Manager<small>MARKETING KIT</small></div>
+  <div><a class="link" href="admin.html">Practice Admin →</a><a class="link" href="kit.html" target="_blank">View Kit ↗</a><a class="link" href="#" onclick="lock();return false;">Lock</a></div>
+</div></div>
+<div class="modebar" id="modebar">🟡 Kit content saves in this browser. Share links work for everyone.</div>
+
+<main>
+  <div class="bar">
+    <div><h1>Marketing Kit — 5 Flyers &amp; 5 Videos</h1><div class="sub">Edit the copy on any asset. Changes appear on the public kit. Grab share links to send to therapists &amp; partners.</div></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn btn-ghost" onclick="copyKit()">🔗 Copy kit link</button>
+      <button class="btn btn-ghost" onclick="resetKit()">Reset to defaults</button>
+      <button class="btn btn-g" onclick="saveAll()">Save all changes</button>
+    </div>
+  </div>
+  <div class="grid" id="kitGrid"></div>
+</main>
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script>
+  var PASSCODE='asana2026';
+  var $=function(id){return document.getElementById(id);};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];});}
+  function toast(m){var t=$('toast');t.textContent=m;t.classList.add('on');setTimeout(function(){t.classList.remove('on');},2400);}
+  if(sessionStorage.getItem('asana_admin')==='1'){$('gate').style.display='none';boot();}
+  function unlock(){if($('pass').value===PASSCODE){sessionStorage.setItem('asana_admin','1');$('gate').style.display='none';boot();}else toast('Incorrect passcode');}
+  function lock(){sessionStorage.removeItem('asana_admin');location.reload();}
+  var KIT=[];
+  function boot(){ ASANA.getKit().then(render); }
+  function render(kit){
+    KIT=kit;
+    $('kitGrid').innerHTML=kit.map(function(k,i){
+      return '<div class="card"><span class="type '+k.type+'">'+k.type+'</span><h3>'+(k.type==='flyer'?'📄':'🎬')+' '+esc(k.title)+'</h3>'+
+        fld(i,'title','Title')+fld(i,'tag','Tag / label')+fld(i,'headline','Headline',true)+fld(i,'sub','Sub-text',true)+
+        '<div class="fld"><label>Theme</label><select data-i="'+i+'" data-f="theme"><option value="violet"'+(k.theme==='violet'?' selected':'')+'>Violet</option><option value="green"'+(k.theme==='green'?' selected':'')+'>Green</option></select></div>'+
+        '<div class="acts"><button class="btn btn-v" onclick="saveOne('+i+')">Save</button><button class="btn btn-ghost" onclick="shareItem(\''+k.id+'\')">🔗 Share link</button></div></div>';
+    }).join('');
+  }
+  function fld(i,f,label,area){
+    var v=esc(KIT[i][f]);
+    return '<div class="fld"><label>'+label+'</label>'+(area?'<textarea data-i="'+i+'" data-f="'+f+'">'+v+'</textarea>':'<input data-i="'+i+'" data-f="'+f+'" value="'+v+'">')+'</div>';
+  }
+  function collect(){
+    document.querySelectorAll('[data-i]').forEach(function(el){KIT[+el.getAttribute('data-i')][el.getAttribute('data-f')]=el.value;});
+  }
+  window.saveOne=function(i){collect();ASANA.saveKit(KIT).then(function(){toast('Saved “'+KIT[i].title+'” ✓');});};
+  window.saveAll=function(){collect();ASANA.saveKit(KIT).then(function(){toast('All assets saved ✓');});};
+  window.resetKit=function(){if(confirm('Reset all kit content to the original defaults?'))ASANA.resetKit().then(render);};
+  window.copyKit=function(){var u=location.origin+location.pathname.replace(/kit-admin\.html$/,'kit.html');(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){toast('Public kit link copied ✓');},function(){toast(u);});};
+  window.shareItem=function(id){var u=location.origin+location.pathname.replace(/kit-admin\.html$/,'kit.html')+'#'+id;(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){toast('Asset link copied ✓');},function(){toast(u);});};
+</script>
+</body>
+</html>

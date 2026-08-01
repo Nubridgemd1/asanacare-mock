@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Admin | Asana Care & Mental Wellness</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{--violet:#4a2a7a;--violet-2:#5f3a95;--violet-soft:#efe9f7;--green:#6cb33f;--green-2:#4f9d34;--green-soft:#eef7e6;--mist:#f6f3fb;--white:#fff;--ink:#2b2440;--ink-2:#514a68;--muted:#8f88a3;--line:#e7e1f0;--amber:#b5651d;--amber-soft:#fbf0e2;--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--mist);color:var(--ink);line-height:1.55}
+  a{color:inherit}
+  .serif{font-family:var(--serif)}
+  .top{background:var(--violet);color:#fff;padding:0}
+  .top .wrap{max-width:1160px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .top .brand{font-family:var(--serif);font-size:19px;font-weight:700}.top .brand small{font-family:var(--sans);font-size:10px;letter-spacing:.2em;color:#cdbce8;display:block}
+  .top a.link{color:#e5d9f5;font-size:13.5px;font-weight:600;margin-left:18px}.top a.link:hover{color:#fff}
+  .modebar{font-size:12.5px;text-align:center;padding:7px;font-weight:600}
+  .tabs{max-width:1160px;margin:22px auto 0;padding:0 22px;display:flex;gap:8px;flex-wrap:wrap}
+  .tab{background:#fff;border:1px solid var(--line);color:var(--ink-2);font-weight:700;font-size:14px;padding:11px 20px;border-radius:30px;cursor:pointer}
+  .tab.on{background:var(--violet);color:#fff;border-color:var(--violet)}
+  main{max-width:1160px;margin:20px auto 60px;padding:0 22px}
+  .panel{display:none}.panel.on{display:block}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+  @media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .stat .n{font-family:var(--serif);font-size:26px;color:var(--violet);font-weight:700}
+  .stat .l{font-size:12px;color:var(--muted);margin-top:2px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:18px}
+  .card h2{font-family:var(--serif);font-size:20px;color:var(--violet);margin-bottom:4px}
+  .card .sub{font-size:13px;color:var(--muted);margin-bottom:16px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{text-align:left;background:var(--violet);color:#fff;font-size:11px;letter-spacing:.5px;text-transform:uppercase;padding:10px 12px;font-weight:600}
+  th:first-child{border-radius:8px 0 0 8px}th:last-child{border-radius:0 8px 8px 0}
+  td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:hover td{background:#faf9fd}
+  .pill{display:inline-block;font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em}
+  .p-new{background:var(--amber-soft);color:var(--amber)}.p-contacted{background:var(--violet-soft);color:var(--violet)}.p-scheduled{background:var(--green-soft);color:var(--green-2)}.p-done{background:#eee;color:#777}
+  select.st,input,textarea{font-family:var(--sans);font-size:13.5px;border:1.5px solid var(--line);border-radius:9px;padding:8px 10px;background:var(--mist);color:var(--ink)}
+  select.st:focus,input:focus,textarea:focus{outline:none;border-color:var(--violet-2);background:#fff;box-shadow:0 0 0 3px var(--violet-soft)}
+  .btn{border:none;border-radius:30px;font-weight:700;font-size:13px;padding:9px 16px;cursor:pointer;font-family:var(--sans)}
+  .btn-v{background:var(--violet);color:#fff}.btn-g{background:var(--green-2);color:#fff}.btn-ghost{background:#fff;border:1.5px solid var(--line);color:var(--ink-2)}
+  .btn-x{background:none;color:#c0392b;font-weight:700;cursor:pointer;border:none;font-size:12.5px}
+  .mini{font-size:12px;color:var(--muted)}
+  .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:640px){.fgrid{grid-template-columns:1fr}}
+  .fld label{display:block;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:5px}
+  .fld input,.fld textarea,.fld select{width:100%}.fld textarea{min-height:90px;resize:vertical}
+  .full{grid-column:1/-1}
+  .postrow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .postrow .q{font-weight:700;color:var(--violet);font-size:15px}
+  .postrow .meta{font-size:12px;color:var(--muted)}
+  .badge{font-size:10px;font-weight:800;padding:3px 8px;border-radius:12px}.b-pub{background:var(--green-soft);color:var(--green-2)}.b-draft{background:#eee;color:#888}
+  .row-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  /* gate */
+  .gate{position:fixed;inset:0;background:linear-gradient(160deg,#4a2a7a,#3a2060);display:flex;align-items:center;justify-content:center;z-index:200}
+  .gate .box{background:#fff;border-radius:20px;padding:34px;width:340px;text-align:center;box-shadow:0 30px 70px rgba(0,0,0,.3)}
+  .gate h1{font-family:var(--serif);color:var(--violet);font-size:24px;margin-bottom:6px}
+  .gate p{font-size:13px;color:var(--muted);margin-bottom:18px}
+  .gate input{width:100%;text-align:center;font-size:16px;padding:12px;margin-bottom:12px}
+  .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--violet);color:#fff;padding:12px 22px;border-radius:30px;font-weight:600;font-size:14px;box-shadow:0 12px 30px rgba(74,42,122,.4);transition:transform .3s;z-index:150}
+  .toast.on{transform:translateX(-50%) translateY(0)}
+  .modal{position:fixed;inset:0;background:rgba(40,30,64,.5);display:none;align-items:center;justify-content:center;z-index:120;padding:20px}
+  .modal.on{display:flex}
+  .modal .m{background:#fff;border-radius:18px;padding:26px;max-width:560px;width:100%;max-height:88vh;overflow:auto}
+  .modal h3{font-family:var(--serif);color:var(--violet);font-size:22px;margin-bottom:14px}
+  dl{display:grid;grid-template-columns:130px 1fr;gap:8px 14px;font-size:14px}dt{color:var(--muted);font-weight:600}dd{color:var(--ink)}
+</style>
+</head>
+<body>
+<!-- GATE -->
+<div class="gate" id="gate"><div class="box">
+  <h1>Practice Admin</h1>
+  <p>Asana Care &amp; Mental Wellness</p>
+  <input type="password" id="pass" placeholder="Enter passcode" onkeydown="if(event.key==='Enter')unlock()">
+  <button class="btn btn-v" style="width:100%" onclick="unlock()">Enter</button>
+  <p style="margin-top:14px;font-size:11px">Demo passcode: <b>asana2026</b> (change in the code before going live)</p>
+</div></div>
+
+<div class="top"><div class="wrap">
+  <div class="brand">Asana Care — Admin<small>PRACTICE DASHBOARD</small></div>
+  <div><a class="link" href="kit-admin.html">Marketing Kit →</a><a class="link" href="index.html" target="_blank">View Site ↗</a><a class="link" href="#" onclick="lock();return false;">Lock</a></div>
+</div></div>
+<div class="modebar" id="modebar"></div>
+
+<div class="tabs">
+  <button class="tab on" data-t="appts">📅 Appointments</button>
+  <button class="tab" data-t="blog">✍️ Blog Topics</button>
+  <button class="tab" data-t="comments">💬 Comments</button>
+</div>
+
+<main>
+  <!-- APPOINTMENTS -->
+  <section class="panel on" id="p-appts">
+    <div class="stats" id="apptStats"></div>
+    <div class="card">
+      <h2>Appointment Requests</h2>
+      <div class="sub">Bookings from the website land here in real time. Update status as you work each one.</div>
+      <div style="overflow-x:auto"><table id="apptTable"><thead><tr><th>Patient</th><th>Reason</th><th>State</th><th>Preferred</th><th>Received</th><th>Status</th><th></th></tr></thead><tbody></tbody></table></div>
+      <p class="empty mini" id="apptEmpty" style="display:none;padding:18px 0">No appointment requests yet. Submissions from the site’s booking form appear here.</p>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="panel" id="p-blog">
+    <div class="card">
+      <h2 id="blogFormTitle">Add a Blog Topic</h2>
+      <div class="sub">Publish a new shareable question, or edit an existing one. Changes appear on the public blog.</div>
+      <form id="blogForm">
+        <input type="hidden" id="bId">
+        <div class="fgrid">
+          <div class="fld full"><label>Question / Title</label><input id="bQuestion" required placeholder="e.g. Is telepsychiatry as effective as in-person care?"></div>
+          <div class="fld"><label>Category</label><input id="bCategory" placeholder="e.g. Telehealth"></div>
+          <div class="fld"><label>Slug (URL)</label><input id="bSlug" placeholder="auto from title"></div>
+          <div class="fld full"><label>Excerpt (card summary)</label><textarea id="bExcerpt" placeholder="1–2 sentence teaser shown on the blog list"></textarea></div>
+          <div class="fld full"><label>Body</label><textarea id="bBody" style="min-height:150px" placeholder="Full answer. Separate paragraphs with a blank line."></textarea></div>
+          <div class="fld full"><label style="display:flex;align-items:center;gap:8px;font-weight:600"><input type="checkbox" id="bPublished" checked style="width:auto"> Published (visible on the site)</label></div>
+        </div>
+        <div class="row-actions" style="margin-top:12px">
+          <button type="submit" class="btn btn-g">Save Topic</button>
+          <button type="button" class="btn btn-ghost" onclick="resetBlogForm()">Clear</button>
+        </div>
+      </form>
+    </div>
+    <div class="card">
+      <h2>Existing Topics</h2>
+      <div class="sub" id="postCount"></div>
+      <div id="postList"></div>
+    </div>
+  </section>
+
+  <!-- COMMENTS -->
+  <section class="panel" id="p-comments">
+    <div class="card">
+      <h2>Comment Moderation</h2>
+      <div class="sub">Approve, hide, or remove comments left on blog topics. Approved comments show publicly.</div>
+      <div style="overflow-x:auto"><table id="cmtTable"><thead><tr><th>Name</th><th>Comment</th><th>On topic</th><th>When</th><th>Status</th><th></th></tr></thead><tbody></tbody></table></div>
+      <p class="empty mini" id="cmtEmpty" style="display:none;padding:18px 0">No comments yet.</p>
+    </div>
+  </section>
+</main>
+
+<div class="modal" id="modal"><div class="m"><h3 id="mTitle">Appointment</h3><dl id="mBody"></dl><div style="margin-top:18px;text-align:right"><button class="btn btn-ghost" onclick="closeModal()">Close</button></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script>
+  var PASSCODE = 'asana2026';
+  var $ = function(id){return document.getElementById(id);};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];});}
+  function when(iso){try{return new Date(iso).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});}catch(e){return '';}}
+  function slugify(s){return String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,60);}
+  function toast(m){var t=$('toast');t.textContent=m;t.classList.add('on');setTimeout(function(){t.classList.remove('on');},2400);}
+
+  // gate
+  if(sessionStorage.getItem('asana_admin')==='1'){$('gate').style.display='none';boot();}
+  function unlock(){ if($('pass').value===PASSCODE){sessionStorage.setItem('asana_admin','1');$('gate').style.display='none';boot();}else{toast('Incorrect passcode');} }
+  function lock(){sessionStorage.removeItem('asana_admin');location.reload();}
+
+  // tabs
+  document.querySelectorAll('.tab').forEach(function(t){t.onclick=function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on');});t.classList.add('on');
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('on');});
+    $('p-'+t.getAttribute('data-t')).classList.add('on');
+  };});
+
+  function boot(){
+    $('modebar').innerHTML = ASANA.live ? '🟢 Live (Supabase) — data shared across all visitors &amp; devices' : '🟡 Demo mode — data is stored in this browser only. Add Supabase keys in data.js to go live.';
+    $('modebar').style.cssText += ASANA.live ? 'background:#eef7e6;color:#4f9d34' : 'background:#fbf0e2;color:#b5651d';
+    loadAppts(); loadPosts(); loadComments();
+  }
+
+  /* ---------- Appointments ---------- */
+  var STATUSES=['new','contacted','scheduled','done'];
+  function loadAppts(){
+    ASANA.getAppointments().then(function(list){
+      var tb=$('apptTable').querySelector('tbody');
+      $('apptEmpty').style.display = list.length?'none':'block';
+      $('apptTable').style.display = list.length?'':'none';
+      var counts={new:0,contacted:0,scheduled:0,done:0};
+      list.forEach(function(a){counts[a.status]=(counts[a.status]||0)+1;});
+      $('apptStats').innerHTML =
+        '<div class="stat"><div class="n">'+list.length+'</div><div class="l">Total requests</div></div>'+
+        '<div class="stat"><div class="n" style="color:#b5651d">'+(counts.new||0)+'</div><div class="l">New / unactioned</div></div>'+
+        '<div class="stat"><div class="n" style="color:#4f9d34">'+(counts.scheduled||0)+'</div><div class="l">Scheduled</div></div>'+
+        '<div class="stat"><div class="n">'+(counts.done||0)+'</div><div class="l">Completed</div></div>';
+      tb.innerHTML = list.map(function(a){
+        var name=esc((a.first_name||'')+' '+(a.last_name||'')).trim()||'—';
+        return '<tr>'+
+          '<td><b>'+name+'</b><br><span class="mini">'+esc(a.email||'')+'</span></td>'+
+          '<td>'+esc(a.reason||'—')+'<br><span class="mini">'+esc(a.patient_type||'')+'</span></td>'+
+          '<td>'+esc(a.state||'—')+'</td>'+
+          '<td>'+esc(a.preferred_date||'Any')+'<br><span class="mini">'+esc(a.preferred_time||'')+'</span></td>'+
+          '<td class="mini">'+when(a.created_at)+'</td>'+
+          '<td><select class="st" onchange="setApptStatus(\''+a.id+'\',this.value)">'+STATUSES.map(function(s){return '<option value="'+s+'"'+(a.status===s?' selected':'')+'>'+s+'</option>';}).join('')+'</select></td>'+
+          '<td class="row-actions"><button class="btn btn-ghost" style="padding:6px 12px" onclick=\'viewAppt('+JSON.stringify(a).replace(/'/g,"&#39;")+')\'>View</button><button class="btn-x" onclick="delAppt(\''+a.id+'\')">Delete</button></td>'+
+        '</tr>';
+      }).join('');
+    });
+  }
+  window.setApptStatus=function(id,s){ASANA.updateAppointment(id,{status:s}).then(function(){loadAppts();toast('Status updated');});};
+  window.delAppt=function(id){if(confirm('Delete this appointment request?'))ASANA.deleteAppointment(id).then(function(){loadAppts();toast('Deleted');});};
+  window.viewAppt=function(a){
+    var rows=[['Name',(a.first_name||'')+' '+(a.last_name||'')],['Email',a.email],['Phone',a.phone],['Reason',a.reason],['Patient type',a.patient_type],['State',a.state],['Preferred date',a.preferred_date||'Any'],['Preferred time',a.preferred_time||'Any'],['Message',a.message||'—'],['Received',when(a.created_at)]];
+    $('mTitle').textContent='Appointment Request';
+    $('mBody').innerHTML=rows.map(function(r){return '<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1]||'—')+'</dd>';}).join('');
+    $('modal').classList.add('on');
+  };
+  window.closeModal=function(){$('modal').classList.remove('on');};
+
+  /* ---------- Blog ---------- */
+  function loadPosts(){
+    ASANA.getPosts().then(function(posts){
+      $('postCount').textContent = posts.length+' topic(s)';
+      $('postList').innerHTML = posts.map(function(p){
+        return '<div class="postrow"><div><div class="q">'+esc(p.question)+'</div><div class="meta">'+esc(p.category||'—')+' · /'+esc(p.slug)+' · '+(p.published?'<span class="badge b-pub">Published</span>':'<span class="badge b-draft">Draft</span>')+'</div></div>'+
+          '<div class="row-actions"><button class="btn btn-ghost" style="padding:7px 13px" onclick="editPost(\''+p.id+'\')">Edit</button><button class="btn btn-ghost" style="padding:7px 13px" onclick="togglePub(\''+p.id+'\','+(p.published?'false':'true')+')">'+(p.published?'Unpublish':'Publish')+'</button><button class="btn-x" onclick="delPost(\''+p.id+'\')">Delete</button></div></div>';
+      }).join('');
+    });
+  }
+  var editing=null;
+  window.editPost=function(id){ASANA.getPosts().then(function(posts){
+    var p=posts.filter(function(x){return x.id===id;})[0];if(!p)return;editing=p;
+    $('blogFormTitle').textContent='Edit Blog Topic';$('bId').value=p.id;$('bQuestion').value=p.question;$('bCategory').value=p.category||'';$('bSlug').value=p.slug;$('bExcerpt').value=p.excerpt||'';$('bBody').value=p.body||'';$('bPublished').checked=!!p.published;
+    window.scrollTo(0,0);
+  });};
+  window.togglePub=function(id,pub){ASANA.getPosts().then(function(posts){var p=posts.filter(function(x){return x.id===id;})[0];if(!p)return;ASANA.savePost({id:id,published:pub}).then(function(){loadPosts();toast(pub?'Published':'Unpublished');});});};
+  window.delPost=function(id){if(confirm('Delete this blog topic?'))ASANA.deletePost(id).then(function(){loadPosts();toast('Deleted');});};
+  window.resetBlogForm=function(){editing=null;$('blogForm').reset();$('bId').value='';$('bPublished').checked=true;$('blogFormTitle').textContent='Add a Blog Topic';};
+  $('blogForm').addEventListener('submit',function(e){e.preventDefault();
+    var post={question:$('bQuestion').value.trim(),category:$('bCategory').value.trim()||'Mental Wellness',slug:($('bSlug').value.trim()||slugify($('bQuestion').value)),excerpt:$('bExcerpt').value.trim(),body:$('bBody').value.trim(),published:$('bPublished').checked};
+    if($('bId').value)post.id=$('bId').value;
+    ASANA.savePost(post).then(function(){resetBlogForm();loadPosts();toast('Topic saved ✓');});
+  });
+
+  /* ---------- Comments ---------- */
+  function loadComments(){
+    ASANA.getAllComments().then(function(list){
+      var tb=$('cmtTable').querySelector('tbody');
+      $('cmtEmpty').style.display=list.length?'none':'block';$('cmtTable').style.display=list.length?'':'none';
+      tb.innerHTML=list.map(function(c){
+        var st=c.status||'approved';
+        return '<tr><td><b>'+esc(c.name)+'</b></td><td>'+esc(c.body)+'</td><td class="mini">'+esc(c.post_slug)+'</td><td class="mini">'+when(c.created_at)+'</td>'+
+          '<td><span class="pill '+(st==='approved'?'p-scheduled':'p-done')+'">'+st+'</span></td>'+
+          '<td class="row-actions">'+(st==='approved'?'<button class="btn btn-ghost" style="padding:6px 11px" onclick="cmtStatus(\''+c.id+'\',\'hidden\')">Hide</button>':'<button class="btn btn-g" style="padding:6px 11px" onclick="cmtStatus(\''+c.id+'\',\'approved\')">Approve</button>')+'<button class="btn-x" onclick="delCmt(\''+c.id+'\')">Delete</button></td></tr>';
+      }).join('');
+    });
+  }
+  window.cmtStatus=function(id,s){ASANA.setCommentStatus(id,s).then(function(){loadComments();toast('Updated');});};
+  window.delCmt=function(id){if(confirm('Delete this comment?'))ASANA.deleteComment(id).then(function(){loadComments();toast('Deleted');});};
+</script>
+</body>
+</html>

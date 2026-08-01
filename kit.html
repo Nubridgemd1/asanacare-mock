@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Kit | Asana Care & Mental Wellness</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{--violet:#4a2a7a;--violet-2:#5f3a95;--violet-deep:#3a2060;--violet-soft:#efe9f7;--green:#6cb33f;--green-2:#4f9d34;--green-soft:#eef7e6;--mist:#f6f3fb;--white:#fff;--ink:#2b2440;--ink-2:#514a68;--muted:#8f88a3;--line:#e7e1f0;--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--mist);color:var(--ink);line-height:1.55;padding-bottom:50px}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+  .serif{font-family:var(--serif)}
+  .hero{background:radial-gradient(ellipse 80% 90% at 80% -10%,#5f3a95,#3a2060);color:#fff;padding:44px 0 40px;text-align:center}
+  .hero h1{font-family:var(--serif);font-size:clamp(28px,4vw,40px);margin-bottom:8px}
+  .hero p{color:rgba(255,255,255,.8);max-width:56ch;margin:0 auto}
+  .share-kit{display:inline-flex;gap:10px;align-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:30px;padding:8px 8px 8px 18px;margin-top:20px;font-size:14px;font-weight:600}
+  .share-kit button{background:#fff;color:var(--violet);border:none;border-radius:24px;padding:8px 16px;font-weight:700;cursor:pointer;font-size:13px}
+  h2.sec{font-family:var(--serif);font-size:26px;color:var(--violet);margin:36px 0 6px;padding-bottom:8px;border-bottom:2px solid var(--green)}
+  .subnote{color:var(--muted);font-size:13.5px;margin-bottom:18px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+  .item{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(74,42,122,.06);display:flex;flex-direction:column}
+  .preview{height:190px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:22px;color:#fff}
+  .preview.violet{background:radial-gradient(ellipse 90% 90% at 80% 0,#5f3a95,#3a2060)}
+  .preview.green{background:radial-gradient(ellipse 90% 90% at 80% 0,#6cb33f,#3f7d26)}
+  .preview .tag{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);padding:4px 10px;border-radius:20px;align-self:flex-start;margin-bottom:10px}
+  .preview .hl{font-family:var(--serif);font-size:20px;line-height:1.15}
+  .preview .leaf{position:absolute;right:-10px;bottom:-10px;opacity:.22;font-size:80px}
+  .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .play .circ{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.9);color:var(--violet);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  .item .b{padding:16px 18px;flex:1;display:flex;flex-direction:column}
+  .item .b h3{font-family:var(--serif);font-size:18px;color:var(--violet)}
+  .item .b p{font-size:13.5px;color:var(--ink-2);margin-top:6px;flex:1}
+  .item .acts{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+  .btn{border:none;border-radius:24px;font-weight:700;font-size:12.5px;padding:8px 14px;cursor:pointer;font-family:var(--sans)}
+  .btn-v{background:var(--violet);color:#fff}.btn-ghost{background:var(--mist);border:1px solid var(--line);color:var(--ink-2)}
+  .backlink{display:inline-block;color:#e5d9f5;font-size:13.5px;font-weight:600;margin-bottom:14px}
+  /* overlay viewer (flyer poster / video) */
+  .viewer{position:fixed;inset:0;background:rgba(30,20,50,.75);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+  .viewer.on{display:flex}
+  .poster{background:#fff;border-radius:16px;width:min(560px,94vw);max-height:92vh;overflow:auto;position:relative}
+  .viewer .close{position:absolute;top:12px;right:14px;background:rgba(255,255,255,.85);border:none;width:34px;height:34px;border-radius:50%;font-size:18px;cursor:pointer;z-index:3}
+  /* poster design */
+  .p-top{padding:34px 34px 26px;color:#fff;position:relative;overflow:hidden}
+  .p-top.violet{background:radial-gradient(ellipse 90% 120% at 80% -10%,#5f3a95,#3a2060)}
+  .p-top.green{background:radial-gradient(ellipse 90% 120% at 80% -10%,#6cb33f,#3f7d26)}
+  .p-brand{font-family:var(--serif);font-size:20px;font-weight:700}.p-brand small{font-size:9px;letter-spacing:.24em;display:block;opacity:.85;font-family:var(--sans)}
+  .p-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.18);padding:5px 12px;border-radius:20px;margin:22px 0 12px}
+  .p-hl{font-family:var(--serif);font-size:30px;line-height:1.12;margin-bottom:10px}
+  .p-sub{font-size:15px;opacity:.92;line-height:1.5}
+  .p-leaf{position:absolute;right:-24px;bottom:-30px;font-size:150px;opacity:.16}
+  .p-body{padding:24px 34px 30px}
+  .p-body .row{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-2);margin-bottom:9px}
+  .p-body .row b{color:var(--violet)}
+  .p-cta{margin-top:16px;background:var(--green-soft);border:1px solid var(--green);border-radius:12px;padding:14px 16px;text-align:center}
+  .p-cta b{color:var(--green-2);font-family:var(--serif);font-size:17px}
+  .p-cta .ph{color:var(--violet);font-weight:700;margin-top:4px}
+  /* animated "video" */
+  .vstage{background:#3a2060;aspect-ratio:16/9;position:relative;overflow:hidden;border-radius:16px 16px 0 0;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:30px}
+  .vstage.green{background:#2f5d1c}
+  .vscene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:34px;opacity:0;animation:vcyc 12s infinite}
+  .vscene:nth-child(1){animation-delay:0s}.vscene:nth-child(2){animation-delay:3s}.vscene:nth-child(3){animation-delay:6s}.vscene:nth-child(4){animation-delay:9s}
+  @keyframes vcyc{0%,2%{opacity:0;transform:translateY(14px) scale(.98)}6%,23%{opacity:1;transform:none}27%,100%{opacity:0;transform:translateY(-14px) scale(1.02)}}
+  .vscene .vt{font-family:var(--serif);font-size:26px;line-height:1.15}
+  .vscene .vs{font-size:14px;opacity:.85;margin-top:8px}
+  .vbadge{position:absolute;top:14px;left:14px;font-size:11px;font-weight:700;background:rgba(255,255,255,.16);padding:4px 10px;border-radius:20px;z-index:2}
+  .vprog{position:absolute;bottom:0;left:0;height:4px;background:var(--green);animation:vbar 12s linear infinite}
+  @keyframes vbar{from{width:0}to{width:100%}}
+  .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--violet);color:#fff;padding:12px 22px;border-radius:30px;font-weight:600;font-size:14px;box-shadow:0 12px 30px rgba(74,42,122,.4);transition:transform .3s;z-index:150}
+  .toast.on{transform:translateX(-50%) translateY(0)}
+  @media print{body *{visibility:hidden}.poster,.poster *{visibility:visible}.poster{position:absolute;inset:0;width:100%;box-shadow:none}.viewer{background:#fff;position:static}.viewer .close{display:none}}
+</style>
+</head>
+<body>
+<div class="hero"><div class="wrap">
+  <a class="backlink" href="index.html">← Asana Care home</a>
+  <h1>Marketing Kit</h1>
+  <p>Flyers &amp; short videos to share Asana Care with patients and referring therapists. Print, post, or send a link.</p>
+  <div class="share-kit">🔗 Share this whole kit <button onclick="copyKit()">Copy link</button></div>
+</div></div>
+
+<div class="wrap">
+  <h2 class="sec">Flyers</h2>
+  <div class="subnote">Click any flyer to open a print-ready poster. Each carries the practice’s contact &amp; booking details.</div>
+  <div class="grid" id="flyers"></div>
+
+  <h2 class="sec">Videos</h2>
+  <div class="subnote">Short animated promos for social media &amp; waiting rooms. Click to play.</div>
+  <div class="grid" id="videos"></div>
+</div>
+
+<div class="viewer" id="viewer"><div class="poster" id="posterBox"><button class="close" onclick="closeViewer()">✕</button><div id="posterInner"></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script>
+  var $=function(id){return document.getElementById(id);};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];});}
+  function toast(m){var t=$('toast');t.textContent=m;t.classList.add('on');setTimeout(function(){t.classList.remove('on');},2400);}
+  window.copyKit=function(){var u=location.origin+location.pathname;(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){toast('Kit link copied ✓');},function(){toast(u);});};
+  function shareItem(id){var u=location.origin+location.pathname+'#'+id;(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){toast('Link copied ✓');},function(){toast(u);});}
+  window.shareItem=shareItem;
+  var leaf='🌿';
+
+  var KIT=[];
+  ASANA.getKit().then(function(kit){
+    KIT=kit;
+    $('flyers').innerHTML=kit.filter(function(k){return k.type==='flyer';}).map(function(k){
+      return '<div class="item" id="'+k.id+'"><div class="preview '+k.theme+'"><span class="tag">'+esc(k.tag)+'</span><div class="hl">'+esc(k.headline)+'</div><span class="leaf">'+leaf+'</span></div>'+
+        '<div class="b"><h3>'+esc(k.title)+'</h3><p>'+esc(k.sub)+'</p><div class="acts"><button class="btn btn-v" onclick="openFlyer(\''+k.id+'\')">Open &amp; Print</button><button class="btn btn-ghost" onclick="shareItem(\''+k.id+'\')">🔗 Copy link</button></div></div></div>';
+    }).join('');
+    $('videos').innerHTML=kit.filter(function(k){return k.type==='video';}).map(function(k){
+      return '<div class="item" id="'+k.id+'"><div class="preview '+k.theme+'"><span class="tag">'+esc(k.tag)+'</span><div class="hl">'+esc(k.title)+'</div><div class="play"><div class="circ">▶</div></div><span class="leaf">'+leaf+'</span></div>'+
+        '<div class="b"><h3>'+esc(k.title)+'</h3><p>'+esc(k.sub)+'</p><div class="acts"><button class="btn btn-v" onclick="openVideo(\''+k.id+'\')">▶ Play</button><button class="btn btn-ghost" onclick="shareItem(\''+k.id+'\')">🔗 Copy link</button></div></div></div>';
+    }).join('');
+    if(location.hash){var el=document.getElementById(location.hash.slice(1));if(el)el.scrollIntoView({behavior:'smooth'});}
+  });
+
+  function item(id){for(var i=0;i<KIT.length;i++)if(KIT[i].id===id)return KIT[i];}
+  window.openFlyer=function(id){var k=item(id);if(!k)return;
+    $('posterInner').innerHTML=
+      '<div class="p-top '+k.theme+'"><div class="p-brand">Asana Care<small>&amp; MENTAL WELLNESS</small></div>'+
+      '<span class="p-tag">'+esc(k.tag)+'</span><div class="p-hl">'+esc(k.headline)+'</div><div class="p-sub">'+esc(k.sub)+'</div><span class="p-leaf">'+leaf+'</span></div>'+
+      '<div class="p-body">'+
+        '<div class="row">✓ <span><b>100% Telehealth</b> — adolescents &amp; adults, Texas &amp; California</span></div>'+
+        '<div class="row">✓ <span>Board-certified <b>PMHNP-BC</b> · same-week appointments when available</span></div>'+
+        '<div class="row">✓ <span>Evaluations · medication management · collaborative care</span></div>'+
+        '<div class="p-cta"><b>Book online today</b><div class="ph">📞 (559) 372-4506 · info@asanacarementalwellness.com</div><div style="font-size:12px;color:var(--muted);margin-top:4px">asanacarementalwellness.com</div></div>'+
+      '</div>';
+    $('viewer').classList.add('on');
+  };
+  window.openVideo=function(id){var k=item(id);if(!k)return;
+    var scenes=[
+      {t:k.title,s:k.tag},
+      {t:k.headline,s:''},
+      {t:k.sub,s:''},
+      {t:'Asana Care & Mental Wellness',s:'Book today · (559) 372-4506 · asanacarementalwellness.com'}
+    ];
+    $('posterInner').innerHTML='<div class="vstage '+(k.theme==='green'?'green':'')+'"><span class="vbadge">'+esc(k.tag)+'</span>'+
+      scenes.map(function(sc){return '<div class="vscene"><div class="vt">'+esc(sc.t)+'</div>'+(sc.s?'<div class="vs">'+esc(sc.s)+'</div>':'')+'</div>';}).join('')+
+      '<div class="vprog"></div></div>'+
+      '<div style="padding:16px 20px"><h3 style="font-family:var(--serif);color:var(--violet);font-size:19px">'+esc(k.title)+'</h3><p style="font-size:13.5px;color:var(--ink-2);margin-top:6px">'+esc(k.sub)+'</p><div style="margin-top:12px"><button class="btn btn-ghost" onclick="shareItem(\''+k.id+'\')">🔗 Copy link</button></div></div>';
+    $('viewer').classList.add('on');
+  };
+  window.closeViewer=function(){$('viewer').classList.remove('on');$('posterInner').innerHTML='';};
+  $('viewer').addEventListener('click',function(e){if(e.target===$('viewer'))closeViewer();});
+</script>
+</body>
+</html>
