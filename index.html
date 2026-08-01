@@ -217,6 +217,15 @@
   .bl-txt small{color:var(--muted);font-size:12.5px}
   .bl-arr{color:var(--muted);font-size:20px;font-weight:700}
   .book-link:hover .bl-arr{color:var(--violet-2)}
+  .bmodal{position:fixed;inset:0;background:rgba(40,30,64,.62);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:200;padding:20px}
+  .bmodal.on{display:flex}
+  .bmodal-box{background:var(--white);border-radius:22px;max-width:460px;width:100%;padding:30px 28px 30px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:bpop .18s ease-out}
+  @keyframes bpop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+  .bmodal-x{position:absolute;top:14px;right:16px;background:var(--mist);border:none;width:34px;height:34px;border-radius:50%;font-size:15px;cursor:pointer;color:var(--ink-2)}
+  .bmodal-x:hover{background:var(--violet-soft);color:var(--violet)}
+  .bmodal-head{text-align:center;margin-bottom:20px}
+  .bmodal-head .t{font-family:var(--serif);font-size:25px;color:var(--violet);font-weight:700}
+  .bmodal-head p{color:var(--ink-2);font-size:13.5px;margin-top:6px}
   .book-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
   @media(max-width:900px){.book-grid{grid-template-columns:1fr;gap:30px}}
   .tebra-card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
@@ -305,7 +314,7 @@
       </div>
       <div class="navcta">
         <span class="navphone">📞 (559) 372-4506</span>
-        <a href="#book" class="btn btn-primary" style="padding:11px 20px">Book Appointment</a>
+        <a href="#book" onclick="openBooking();return false;" class="btn btn-primary" style="padding:11px 20px">Book Appointment</a>
       </div>
     </nav>
   </div>
@@ -321,7 +330,7 @@
         <h1>Telepsychiatry for <em>Texas</em> &amp; California, from anywhere you feel at home.</h1>
         <p class="lead">Compassionate, collaborative online psychiatric care for adolescents and adults — with Asana Aruna, board-certified PMHNP.</p>
         <div class="hero-cta">
-          <a href="#book" class="btn btn-primary">Book an Appointment
+          <a href="#book" onclick="openBooking();return false;" class="btn btn-primary">Book an Appointment
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="#therapists" class="btn btn-ghost">Refer a Patient</a>
@@ -361,7 +370,7 @@
       <h2>Board-certified psychiatric care, delivered with warmth.</h2>
       <p style="color:var(--ink-2);font-size:17px;margin-top:16px">I am a board-certified Psychiatric Mental Health Nurse Practitioner providing telepsychiatry services for adolescents and adults across <strong style="color:var(--violet)">Texas and California</strong>. I value the vital role therapists play in the healing journey and believe that collaborative, patient-centered care leads to the best outcomes for our shared patients.</p>
       <p style="color:var(--ink-2);font-size:17px;margin-top:14px">Care is <strong style="color:var(--violet)">100% telehealth</strong> — convenient, confidential, and accessible from anywhere in the state.</p>
-      <a href="#book" class="btn btn-green" style="margin-top:22px">Start Your Care</a>
+      <a href="#book" onclick="openBooking();return false;" class="btn btn-green" style="margin-top:22px">Start Your Care</a>
     </div>
     <div class="about-card">
       <span class="eyebrow" style="color:var(--violet-2)">Why patients choose us</span>
@@ -473,78 +482,7 @@
         <span class="bl-arr">↗</span>
       </a>
     </div>
-    <div class="or-divider"><span>or, prefer we reach out?</span></div>
-    <div class="book-grid">
-    <div class="book-aside">
-      <span class="eyebrow">Schedule Online</span>
-      <h2>Request an appointment</h2>
-      <div class="li"><svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="11" fill="#efe9f7"/><path d="M11 6v5l3 2" stroke="#4a2a7a" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg><div><b>Fast response.</b> New patients are contacted within 24–48 hours.</div></div>
-      <div class="li"><svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="11" fill="#eef7e6"/><path d="M6 11.5l3 3 6-7" stroke="#4f9d34" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>100% telehealth.</b> Seen securely from anywhere in Texas or California.</div></div>
-      <div class="li"><svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="11" fill="#efe9f7"/><path d="M11 5l1.6 3.6L16.5 9l-3 2.8.8 4L11 13.9 7.7 15.8l.8-4-3-2.8 3.9-.4z" fill="#4a2a7a"/></svg><div><b>Now accepting new patients</b> — adolescents &amp; adults.</div></div>
-      <div class="qr-card">
-        <a href="https://www.tebra.com/care/practice/asana-care-mental-wellness-884819" target="_blank" rel="noopener" class="qr" aria-label="Book on Tebra"></a>
-        <div><b style="color:var(--violet);font-family:var(--serif);font-size:16px">Prefer Tebra?</b><br><a href="https://www.tebra.com/care/practice/asana-care-mental-wellness-884819" target="_blank" rel="noopener" style="color:var(--green-2);font-weight:700;font-size:13.5px">View live availability &amp; book →</a></div>
-      </div>
-    </div>
-
-    <div class="tebra-card">
-      <div class="tebra-head">
-        <div class="tt">Send an Appointment Request</div>
-        <span class="badge">Reply in 24–48h</span>
-      </div>
-      <div class="tebra-body">
-        <form id="bookForm" novalidate>
-          <!-- Web3Forms fields -->
-          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
-          <input type="hidden" name="subject" value="New Appointment Request — Asana Care & Mental Wellness">
-          <input type="hidden" name="from_name" value="Asana Care Website">
-          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-
-          <div class="fld"><label>Reason for Visit <span class="req">*</span></label>
-            <select name="Reason for Visit" required>
-              <option value="">Select a reason…</option>
-              <option>New Patient — Psychiatric Evaluation</option>
-              <option>Medication Management (Follow-Up)</option>
-              <option>Second Opinion</option>
-              <option>Adolescent Evaluation</option>
-              <option>Therapist Referral</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="frow">
-            <div class="fld"><label>First Name <span class="req">*</span></label><input name="First Name" required placeholder="First name"></div>
-            <div class="fld"><label>Last Name <span class="req">*</span></label><input name="Last Name" required placeholder="Last name"></div>
-          </div>
-          <div class="frow">
-            <div class="fld"><label>Email <span class="req">*</span></label><input type="email" name="email" required placeholder="you@email.com"></div>
-            <div class="fld"><label>Phone <span class="req">*</span></label><input type="tel" name="Phone" required placeholder="(___) ___-____"></div>
-          </div>
-          <div class="frow">
-            <div class="fld"><label>Patient State <span class="req">*</span></label>
-              <select name="State" required><option value="">Select…</option><option>Texas</option><option>California</option></select>
-            </div>
-            <div class="fld"><label>Patient Type</label>
-              <select name="Patient Type"><option>Adult</option><option>Adolescent</option></select>
-            </div>
-          </div>
-          <div class="frow">
-            <div class="fld"><label>Preferred Date</label><input type="date" name="Preferred Date"></div>
-            <div class="fld"><label>Preferred Time</label>
-              <select name="Preferred Time"><option value="">Any</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select>
-            </div>
-          </div>
-          <div class="fld"><label>Anything you'd like us to know?</label><textarea name="Message" placeholder="Insurance, referring therapist, concerns, etc. (optional)"></textarea></div>
-          <label class="consent"><input type="checkbox" required> I consent to be contacted about my appointment request. This form is not for medical emergencies — if you are in crisis, call 988 or 911.</label>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" id="bookBtn">Request Appointment</button>
-          <p class="book-note">🔒 Your request is sent securely to our office and answered within 24–48 hours.</p>
-        </form>
-        <div id="book-ok">
-          <h4>✓ Request received</h4>
-          <p style="color:var(--ink-2)">Thank you — your appointment request has been sent to our office. We'll reach out within 24–48 hours. In an emergency, call 988 or 911.</p>
-        </div>
-      </div>
-    </div>
-    </div><!-- /book-grid -->
+    <p style="text-align:center;color:var(--muted);font-size:12.5px;margin-top:18px">Both open the practice’s secure scheduler — your appointment is confirmed directly in Asana Care’s account.</p>
   </div><!-- /wrap -->
 </section>
 
@@ -578,7 +516,7 @@
       <span class="brand-name" style="font-size:22px">Asana Care<small>&amp; Mental Wellness</small></span>
       <p>Compassionate. Collaborative. Patient-Centered Care. Telepsychiatry for adolescents &amp; adults across Texas &amp; California.</p>
     </div>
-    <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#conditions">Conditions Treated</a></li><li><a href="#therapists">For Therapists</a></li><li><a href="#book">Book Appointment</a></li></ul></div>
+    <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#conditions">Conditions Treated</a></li><li><a href="#therapists">For Therapists</a></li><li><a href="#book" onclick="openBooking();return false;">Book Appointment</a></li></ul></div>
     <div><h4>Contact</h4><ul><li><a href="tel:5593724506">(559) 372-4506</a></li><li>Fax: (559) 372-4507</li><li><a href="mailto:info@asanacarementalwellness.com">info@asanacarementalwellness.com</a></li><li><a href="https://www.tebra.com/care/practice/asana-care-mental-wellness-884819" target="_blank" rel="noopener">Book on Tebra</a></li></ul></div>
   </div>
   <div class="wrap foot-bottom">
@@ -587,7 +525,18 @@
   </div>
 </footer>
 
-<a href="#book" class="btn btn-green fab">Book Appointment</a>
+<!-- Booking modal — Tebra & Zocdoc only -->
+<div class="bmodal" id="bookModal" role="dialog" aria-modal="true" aria-label="Book an appointment">
+  <div class="bmodal-box">
+    <button class="bmodal-x" onclick="closeBooking()" aria-label="Close">✕</button>
+    <div class="bmodal-head"><div class="t">Book your appointment</div><p>Choose Asana Care’s scheduler — you’ll book directly in the practice’s account.</p></div>
+    <div class="book-links" style="grid-template-columns:1fr">
+      <a class="book-link" href="https://www.tebra.com/care/practice/asana-care-mental-wellness-884819" target="_blank" rel="noopener"><span class="bl-badge">T</span><span class="bl-txt"><b>Book on Tebra</b><small>Live availability · Asana Care &amp; Mental Wellness</small></span><span class="bl-arr">↗</span></a>
+      <a class="book-link" href="https://www.zocdoc.com/practice/asana-care-and-mental-wellness-144556" target="_blank" rel="noopener"><span class="bl-badge zoc">Z</span><span class="bl-txt"><b>Book on Zocdoc</b><small>Real-time booking · check your insurance</small></span><span class="bl-arr">↗</span></a>
+    </div>
+  </div>
+</div>
+<a href="#book" onclick="openBooking();return false;" class="btn btn-green fab">Book Appointment</a>
 
 <script src="data.js"></script>
 <script>
@@ -604,34 +553,13 @@
   };});
 
   // Booking → real-time email via Web3Forms, with graceful mailto fallback.
-  var EMAIL_ON_FILE = 'info@asanacarementalwellness.com';
-  var form = document.getElementById('bookForm');
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    var btn = document.getElementById('bookBtn');
-    var data = new FormData(form);
-    var key = data.get('access_key');
-    btn.textContent = 'Sending…'; btn.disabled = true;
-    // Log to the admin appointments inbox (Supabase when live, else localStorage)
-    try{
-      var a={}; data.forEach(function(v,k){ if(['access_key','subject','from_name','botcheck'].indexOf(k)<0) a[k]=v; });
-      if(window.ASANA) ASANA.addAppointment({reason:a['Reason for Visit'],first_name:a['First Name'],last_name:a['Last Name'],email:a['email'],phone:a['Phone'],state:a['State'],patient_type:a['Patient Type'],preferred_date:a['Preferred Date'],preferred_time:a['Preferred Time'],message:a['Message']});
-    }catch(err){}
-    function done(){ form.style.display='none'; document.getElementById('book-ok').style.display='block'; }
-    function mailtoFallback(){
-      var lines=[]; data.forEach(function(v,k){ if(v && ['access_key','subject','from_name','botcheck'].indexOf(k)<0) lines.push(k+': '+v); });
-      var body=encodeURIComponent('New appointment request:\n\n'+lines.join('\n'));
-      window.location.href='mailto:'+EMAIL_ON_FILE+'?subject='+encodeURIComponent('New Appointment Request — Asana Care')+'&body='+body;
-      setTimeout(done, 400);
-    }
-    // If the access key hasn't been configured yet, go straight to mailto.
-    if(!key || key.indexOf('YOUR_')===0){ mailtoFallback(); return; }
-    try{
-      var res = await fetch('https://api.web3forms.com/submit', {method:'POST', body:data});
-      var j = await res.json();
-      if(j.success){ done(); } else { mailtoFallback(); }
-    }catch(err){ mailtoFallback(); }
-  });
+  // Booking modal — brings up only Asana Care's Tebra & Zocdoc schedulers
+  window.openBooking = function(){ var m=document.getElementById('bookModal'); if(m) m.classList.add('on'); };
+  window.closeBooking = function(){ var m=document.getElementById('bookModal'); if(m) m.classList.remove('on'); };
+  (function(){ var m=document.getElementById('bookModal');
+    if(m) m.addEventListener('click', function(e){ if(e.target===m) closeBooking(); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeBooking(); });
+  })();
 </script>
 </body>
 </html>
