@@ -4,6 +4,13 @@ Static mock for **asanacarementalwellness.com** — telepsychiatry practice of *
 
 Live demo (GitHub Pages): the **main site** is the repo root; the **admin** is `admin.html`.
 
+## Booking — goes to the practice's real scheduler accounts
+The **Book your appointment** section shows two labeled links:
+- **T — Book on Tebra** → `https://www.tebra.com/care/practice/asana-care-mental-wellness-884819`
+- **Z — Book on Zocdoc** → `https://www.zocdoc.com/practice/asana-care-and-mental-wellness-144556`
+
+Both open the practice's real scheduler so appointments land in the Tebra / Zocdoc accounts directly. A secondary **Send a request** form also emails the office (Web3Forms) and logs to the admin inbox.
+
 ## Pages
 | File | What |
 |---|---|
