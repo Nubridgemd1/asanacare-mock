@@ -467,7 +467,8 @@
 
 <!-- BOOK YOUR APPOINTMENT -->
 <style>
-  .book-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:880px;margin:0 auto;text-align:left}
+  .book-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1040px;margin:0 auto;text-align:left}
+  @media(max-width:860px){.book-grid{grid-template-columns:1fr}}
   .book-card{display:block;background:#fff;border:1px solid #e7e2f2;border-radius:16px;overflow:hidden;transition:.25s;box-shadow:0 10px 26px rgba(74,42,122,.07)}
   .book-card:hover{border-color:#6cb33f;transform:translateY(-3px);box-shadow:0 18px 36px rgba(74,42,122,.15)}
   .bc-head{display:flex;align-items:center;gap:13px;background:linear-gradient(120deg,#5a3393,#4a2a7a);color:#fff;padding:17px 24px;font-family:var(--serif);font-size:22px;font-weight:600}
@@ -498,6 +499,14 @@
           <h3>Book on Zocdoc</h3>
           <p>Real-time booking &mdash; check your insurance as you go.</p>
           <span class="bc-go">Open scheduler &#8599;</span>
+        </div>
+      </a>
+      <a class="book-card" id="bookPrivate" href="#" rel="noopener" aria-label="Book directly with Asana Care">
+        <div class="bc-head"><span class="bc-badge">A</span><span>Direct</span></div>
+        <div class="bc-body">
+          <h3>Book Directly</h3>
+          <p>A private request straight to Asana Care &mdash; we&rsquo;ll reach out to schedule.</p>
+          <span class="bc-go">Request privately &#8599;</span>
         </div>
       </a>
     </div>
@@ -621,6 +630,7 @@
     email:'info@asanacarementalwellness.com',
     ptLink:'https://www.psychologytoday.com/us/psychiatrists/asana-aruna-los-angeles-ca/1506593',
     paymentLink:'',            /* paste a Stripe/Square Payment Link to receive card payments */
+    privateBookingLink:'',     /* OPTIONAL: your own independent scheduling link (Calendly, SimplePractice, practice site, etc.). If blank, the "Book Directly" card opens a private request form. */
     bookingEndpoint:'',        /* FormSubmit/Web3Forms endpoint to receive booking emails */
     bio:'Asana Aruna is a board-certified Psychiatric Mental Health Nurse Practitioner providing compassionate, evidence-based telepsychiatry across Texas & California. She offers unhurried evaluations and collaborative medication management for anxiety, depression, ADHD, bipolar disorder, OCD, PTSD, and more — for adolescents and adults, 100% online.',
     insurers:[]
@@ -644,6 +654,8 @@
     {ic:'💬',t:'Whole-Person Support',img:3769021,d:'Stress, burnout, grief, self-esteem, and life transitions — care that sees the whole you.'}
   ];
   function pexel(id,w,h){return 'https://images.pexels.com/photos/'+id+'/pexels-photo-'+id+'.jpeg?auto=compress&cs=tinysrgb&fit=crop&w='+w+'&h='+h;}
+  /* Reel images: fetch the FULL photo (no crop) so nothing — especially heads — is cut off. */
+  function pexelReel(id){return 'https://images.pexels.com/photos/'+id+'/pexels-photo-'+id+'.jpeg?auto=compress&cs=tinysrgb&w=760';}
   var POSTS=[
     {cat:'Medication',ic:'💊',t:'Starting Psychiatric Medication: What to Really Expect',ex:'The honest, judgment-free guide to beginning medication — timelines, side effects, and how we adjust together.',
       body:'<p>Deciding to start a psychiatric medication can feel huge. Here is what the first few weeks usually look like, and why patience and partnership matter.</p><h4>It is a collaboration, not a prescription pad</h4><p>We start low, go slow, and check in often. Your feedback is the most important data we have.</p><h4>Give it a fair window</h4><p>Many medications take 2–6 weeks to show their full benefit. Early side effects often ease as your body adjusts.</p><h4>You are never stuck</h4><p>If something is not working, we change it. The goal is <em>you</em> feeling like yourself — not any particular pill.</p>'},
@@ -690,7 +702,7 @@
     var t=REEL.map(function(s){
       var cap=s[1], o=over[cap], src, pos=s[2]||'';
       if(o){ src=(typeof o==='string')?o:o.src; if(o&&o.pos)pos=o.pos; }
-      else { src=(typeof s[0]==='string')?s[0]:pexel(s[0],420,300); }
+      else { src=(typeof s[0]==='string')?s[0]:pexelReel(s[0]); }
       var style=pos?' style="object-position:'+pos+'"':'';
       return '<div class="spec"><img loading="lazy" alt="'+esc(cap)+'" src="'+src+'"'+style+'><span>'+cap+'</span></div>';
     }).join('');
@@ -826,6 +838,8 @@
   /* #book now scrolls to the visible Tebra/Zocdoc booking section (no modal). */
   // close modals on overlay click
   ['bookOv','postOv'].forEach(function(id){document.getElementById(id).addEventListener('click',function(e){if(e.target===this)this.classList.remove('show');});});
+  /* "Book Directly" card → your independent link if set, else a private request form. */
+  (function(){var el=document.getElementById('bookPrivate');if(!el)return;var pl=(CFG.privateBookingLink||'').trim();if(pl){el.setAttribute('href',pl);el.setAttribute('target','_blank');}else{el.setAttribute('href','#');el.addEventListener('click',function(e){e.preventDefault();openBook();});}})();
 </script>
 </body>
 </html>
