@@ -385,7 +385,7 @@
       <a href="#insurance">Insurance</a>
       <a href="journal.html">Journal</a>
       <a href="#contact">Contact</a>
-      <a href="#" class="btn gold" onclick="openBook();return false">Book Now</a>
+      <a href="#book" class="btn gold">Book Now</a>
     </nav>
     <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
   </div>
@@ -400,7 +400,7 @@
     <h1>Compassionate Care.<br>Renewed Balance.<br>A Healthier You.</h1>
     <p class="lede" id="heroBio">Asana Care &amp; Mental Wellness provides evidence-based online psychiatric care and medication management in a warm, welcoming, and judgment-free environment. We support individuals navigating anxiety, depression, ADHD, trauma-related conditions, and mood disorders through personalized treatment tailored to their unique needs.<br><br>Our goal is to help you feel heard, understood, and empowered on your journey toward emotional wellness.<br><br>Convenient online psychiatric care for individuals in Texas and California.</p>
     <div class="hero-cta">
-      <a href="#" class="btn gold" onclick="openBook();return false">Book an Appointment</a>
+      <a href="#book" class="btn gold">Book an Appointment</a>
       <a href="#" class="btn ghost light" id="callBtn" onclick="callNow();return false">Call (559) 372-4506</a>
     </div>
     <a class="pt-badge" id="ptBadge" href="https://www.psychologytoday.com/us/psychiatrists/asana-aruna-los-angeles-ca/1506593" target="_blank" rel="noopener">
@@ -433,7 +433,7 @@
         <span class="chip">Insomnia</span><span class="chip">Women&rsquo;s Mental Health</span><span class="chip">Medication Management</span>
       </div>
       <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
-        <a href="#" class="btn gold" onclick="openBook();return false">Book an Appointment</a>
+        <a href="#book" class="btn gold">Book an Appointment</a>
         <a href="about.html" class="btn ghost">More about Asana &rarr;</a>
       </div>
     </div>
@@ -465,6 +465,46 @@
   </div>
 </section>
 
+<!-- BOOK YOUR APPOINTMENT -->
+<style>
+  .book-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:880px;margin:0 auto;text-align:left}
+  .book-card{display:block;background:#fff;border:1px solid #e7e2f2;border-radius:16px;overflow:hidden;transition:.25s;box-shadow:0 10px 26px rgba(74,42,122,.07)}
+  .book-card:hover{border-color:#6cb33f;transform:translateY(-3px);box-shadow:0 18px 36px rgba(74,42,122,.15)}
+  .bc-head{display:flex;align-items:center;gap:13px;background:linear-gradient(120deg,#5a3393,#4a2a7a);color:#fff;padding:17px 24px;font-family:var(--serif);font-size:22px;font-weight:600}
+  .bc-badge{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800;font-family:var(--sans)}
+  .bc-body{padding:24px 26px 28px}
+  .bc-body h3{color:#4a2a7a;font-size:23px;margin-bottom:8px}
+  .bc-body p{color:var(--muted);font-size:15px;margin-bottom:16px}
+  .bc-go{display:inline-flex;align-items:center;gap:6px;color:#4e8a2c;font-size:13px;letter-spacing:.07em;text-transform:uppercase;font-weight:700;border-bottom:1px solid #6cb33f;padding-bottom:2px}
+  @media(max-width:620px){.book-grid{grid-template-columns:1fr}}
+</style>
+<section id="book" style="background:#fbf9fe;border-top:1px solid #e7e2f2;border-bottom:1px solid #e7e2f2">
+  <div class="wrap center">
+    <span class="eyebrow">Ready When You Are</span>
+    <h2 class="title">Book Your Appointment</h2>
+    <p class="body center" style="max-width:47em;margin:0 auto 34px">Choose your preferred scheduler &mdash; your appointment is confirmed directly in the practice&rsquo;s account. New patients welcome across Texas &amp; California.</p>
+    <div class="book-grid">
+      <a class="book-card" href="https://www.tebra.com/care/practice/asana-care-mental-wellness-884819" target="_blank" rel="noopener" aria-label="Book on Tebra">
+        <div class="bc-head"><span class="bc-badge">T</span><span>Tebra</span></div>
+        <div class="bc-body">
+          <h3>Book on Tebra</h3>
+          <p>Live availability with Asana Care &amp; Mental Wellness.</p>
+          <span class="bc-go">Open scheduler &#8599;</span>
+        </div>
+      </a>
+      <a class="book-card" href="https://www.zocdoc.com/practice/asana-care-and-mental-wellness-144556" target="_blank" rel="noopener" aria-label="Book on Zocdoc">
+        <div class="bc-head"><span class="bc-badge">Z</span><span>Zocdoc</span></div>
+        <div class="bc-body">
+          <h3>Book on Zocdoc</h3>
+          <p>Real-time booking &mdash; check your insurance as you go.</p>
+          <span class="bc-go">Open scheduler &#8599;</span>
+        </div>
+      </a>
+    </div>
+    <p class="note" style="margin-top:22px">Prefer to call or email? <a href="#" onclick="callNow();return false" style="color:var(--gold-dk);border-bottom:1px solid var(--gold)">Call (559) 372-4506</a> &nbsp;&middot;&nbsp; <a href="mailto:info@asanacarementalwellness.com" style="color:var(--gold-dk);border-bottom:1px solid var(--gold)">info@asanacarementalwellness.com</a></p>
+  </div>
+</section>
+
 <!-- INSURANCE & PAYMENT -->
 <section class="pay-bg" id="insurance">
   <div class="wrap center">
@@ -479,7 +519,7 @@
         <h3>Private Pay &amp; Cards</h3>
         <p style="color:#d9e3dd;font-size:15px;margin-bottom:14px">Sliding scale available. Pay securely by card or HSA when you book your session.</p>
         <div class="cards-row"><span>Visa</span><span>Mastercard</span><span>Amex</span><span>Discover</span><span>HSA / FSA</span></div>
-        <div style="margin-top:22px"><a href="#" class="btn gold" onclick="openBook();return false">Book &amp; Pay Now</a></div>
+        <div style="margin-top:22px"><a href="#book" class="btn gold">Book Now</a></div>
       </div>
     </div>
   </div>
@@ -504,7 +544,7 @@
     <div>
       <h4>Contact</h4>
       <a href="#" id="footPhone" onclick="callNow();return false">📞 (559) 372-4506</a><br>
-      <a href="#" onclick="openBook();return false">✦ Book an appointment</a><br>
+      <a href="#book">✦ Book an appointment</a><br>
       <a id="footEmail" href="mailto:info@asanacarementalwellness.com">✉ info@asanacarementalwellness.com</a><br>
       <span style="font-size:14px;color:#c3b7df">Online · Licensed in Texas &amp; California</span>
     </div>
@@ -783,7 +823,7 @@
   if(window.OasisSync){OasisSync.getConfig().then(function(remote){
     if(remote&&typeof remote==='object'){CFG=Object.assign(CFG,remote);try{localStorage.setItem('oasis_cfg',JSON.stringify(CFG));}catch(e){}applyCfg();}
   });}
-  (function(){if((location.hash||'')==='#book'){openBook();}})();
+  /* #book now scrolls to the visible Tebra/Zocdoc booking section (no modal). */
   // close modals on overlay click
   ['bookOv','postOv'].forEach(function(id){document.getElementById(id).addEventListener('click',function(e){if(e.target===this)this.classList.remove('show');});});
 </script>
