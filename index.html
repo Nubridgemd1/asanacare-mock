@@ -104,7 +104,7 @@
   .spec-track{display:flex;gap:16px;width:max-content;padding:8px 2px 12px}
   .spec{flex:0 0 228px;width:228px;text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:7px;overflow:hidden;transition:.2s}
   .spec:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 10px 20px rgba(74,42,122,.09)}
-  .spec img{width:100%;height:150px;object-fit:cover;display:block;background:var(--sage)}
+  .spec img{width:100%;height:196px;object-fit:contain;object-position:center;display:block;background:linear-gradient(160deg,#f3eefc,#eef7e6)}
   .spec span{display:block;padding:11px 13px;font-size:14px;color:var(--teal);font-weight:600}
   .eval-feature{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;text-align:left;background:#fff;border:1px solid #e7e2f2;border-radius:18px;overflow:hidden;box-shadow:0 20px 44px rgba(74,42,122,.1);max-width:940px;margin:0 auto}
   .eval-photo img{width:100%;height:100%;min-height:340px;object-fit:cover;display:block}
@@ -684,7 +684,7 @@
 
   /* ---------- Render ---------- */
   (function(){var sg=document.getElementById('svcGrid');if(sg)sg.innerHTML=SERVICES.map(function(s){return '<div class="svc"><img class="svc-img" loading="lazy" alt="'+esc(s.t)+'" src="'+pexel(s.img,620,420)+'"><div class="svc-body"><div class="ic">'+s.ic+'</div><h3>'+s.t+'</h3><p>'+s.d+'</p></div></div>';}).join('');})();
-  var REEL=[[7579831,'Truly heard'],['assets/warm-welcome-reel.jpg','A warm welcome','center 20%'],['assets/expert-care-banner.png','Expert care'],['assets/telehealth-reel.png','Telehealth visits'],[6129507,'Our approach'],[3931633,'Support that helps'],[3153201,'A steady partner'],['assets/not-alone-reel.jpg','You are not alone','center 18%'],[5407206,'Careful assessment'],[5452293,'Compassionate care']];
+  var REEL=[[7579831,'Truly heard'],['assets/warm-welcome-reel.jpg','A warm welcome'],['assets/expert-care-banner.png','Expert care'],['assets/telehealth-reel.png','Telehealth visits'],[6129507,'Our approach'],[3931633,'Support that helps'],[3153201,'A steady partner'],['assets/not-alone-reel.jpg','You are not alone'],[5407206,'Careful assessment'],[5452293,'Compassionate care']];
   function renderReel(over){
     over=over||{};
     var t=REEL.map(function(s){
